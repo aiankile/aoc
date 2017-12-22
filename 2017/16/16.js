@@ -21,10 +21,8 @@ inp.forEach(m => m[0](state,m[1]));
 console.log("DAY 16-1:", state.map(x => letters[x]).join("")); // jkmflcgpdbonihea
 
 // 16-2
-let newState = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], loop = 0, states = [];
-while(1) {
-	let footprint = newState.map(x => letters[x]).join("");
-	if(loop !== 0 && footprint === letters) break;
+let newState = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], loop = 0, states = [], footprint;
+while((footprint = newState.map(x => letters[x]).join("")) !== letters || loop == 0) {	
 	states[loop] = footprint;
 	inp.forEach(m => m[0](newState,m[1]));
 	loop++;
