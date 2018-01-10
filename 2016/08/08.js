@@ -21,7 +21,7 @@ const ops = {
 let instr = input.map(r => [r.split(" ")[0],r]).map(r => ({f:ops[r[0]].exec, d:ops[r[0]].parse(r[1])}));
 let screen = Array(6).fill(Array(50).fill(0)).map(r => r.slice());
 instr.forEach(i => {i.f(screen, i.d);});
-console.log('DAY 08-1:', screen.reduce((acr,row) => acr+row.reduce((acc,col) => acc+col,0),0));
+console.log('DAY 08-1:', screen.reduce((acr,row) => acr+row.reduce((acc,col) => acc+col,0),0));	// 119
 
 // 08-2 (visual solution)
 function showScreen(screen) {
